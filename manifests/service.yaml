@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: contosoair
+  namespace: default
+  labels:
+    kubernetes.azure.com/generator: draft
+spec:
+  type: LoadBalancer
+  selector:
+    app: contosoair
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
