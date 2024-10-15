@@ -25,7 +25,7 @@
 # For more samples to get started with GitHub Action workflows to deploy to Azure, refer to https://github.com/Azure/actions-workflow-samples
 # For more options with the actions used below please refer to https://github.com/Azure/login
 
-name: deployContosoToAKS
+name: contosoFlow
 
 on:
   push:
@@ -41,6 +41,7 @@ env:
   DEPLOYMENT_MANIFEST_PATH: |
     ./manifests/deployment.yaml
     ./manifests/service.yaml
+  NAMESPACE: default
 
 jobs:
   buildImage:
@@ -62,7 +63,7 @@ jobs:
 
       # Builds and pushes an image up to your Azure Container Registry
       - name: Build and push image to ACR
-        run: az acr build --image ${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f ./src/web/Dockerfile .
+        run: az acr build --image ${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f ./Dockerfile ./src/web
 
   deploy:
     permissions:
@@ -96,6 +97,11 @@ jobs:
           cluster-name: ${{ env.CLUSTER_NAME }}
           admin: 'false'
           use-kubelogin: 'true'
+
+       # Check if namespace exists, if not create it
+      - name: Ensure Namespace exists
+        run: |
+          kubectl get namespace ${{ env.NAMESPACE }} || kubectl create namespace ${{ env.NAMESPACE }}
 
       # Deploys application based on given manifest file
       - name: Deploys application
