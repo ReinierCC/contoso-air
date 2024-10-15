@@ -5,7 +5,7 @@ EXPOSE 3000
 RUN mkdir -p /usr/src/web
 WORKDIR /usr/src/web
 COPY . .
-RUN ls -al /usr/src/web
+RUN ls
 RUN npm install
 
 
