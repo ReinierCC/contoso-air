@@ -29,7 +29,7 @@ name: contosoFlow
 
 on:
   push:
-    branches: [AksExtensionDeploy]
+    branches: [AksExtensionAutoDeploymentsDemo]
   workflow_dispatch:
 
 env:
@@ -37,7 +37,7 @@ env:
   CONTAINER_NAME: contosoair
   CLUSTER_RESOURCE_GROUP: rei-rg
   ACR_RESOURCE_GROUP: rei-rg
-  CLUSTER_NAME: ReiHasAGreatCluster
+  CLUSTER_NAME: TheBestClusterName
   DEPLOYMENT_MANIFEST_PATH: |
     ./manifests/deployment.yaml
     ./manifests/service.yaml
