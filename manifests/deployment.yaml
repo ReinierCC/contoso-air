@@ -5,7 +5,7 @@ metadata:
   labels:
     app: PortalContosoAir
     kubernetes.azure.com/generator: devhub
-  namespace: namespace-workflow-1729095004458
+  namespace: namespace-workflow-1729107684714
 spec:
   replicas: 1
   selector:
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: PortalContosoAir
-          image: acrworkflow1729095004458.azurecr.io/image-workflow-1729095004458:latest
+          image: acrworkflow1729107684714.azurecr.io/image-workflow-1729107684714:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
