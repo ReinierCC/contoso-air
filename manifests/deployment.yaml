@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: PortalContosoAir
+  labels:
+    app: PortalContosoAir
+    kubernetes.azure.com/generator: devhub
+  namespace: namespace-workflow-1729095004458
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: PortalContosoAir
+  template:
+    metadata:
+      labels:
+        app: PortalContosoAir
+    spec:
+      containers:
+        - name: PortalContosoAir
+          image: acrworkflow1729095004458.azurecr.io/image-workflow-1729095004458:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
