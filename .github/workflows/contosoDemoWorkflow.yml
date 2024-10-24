@@ -37,7 +37,7 @@ env:
   CONTAINER_NAME: contosoair
   CLUSTER_RESOURCE_GROUP: best-rg
   ACR_RESOURCE_GROUP: best-rg
-  CLUSTER_NAME: bestClusterName
+  CLUSTER_NAME: bestCluster
   DEPLOYMENT_MANIFEST_PATH: |
     ./manifests/deployment.yaml
     ./manifests/service.yaml
