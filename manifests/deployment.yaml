@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: contosoair
-          image: aksextensionacr.azurecr.io/contosoair:latest
+          image: bestacr.azurecr.io/contosoair:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
