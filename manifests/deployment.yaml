@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: my-app
-          image: myimage:latest
+          image: reiacr9.azurecr.io/myimage:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
