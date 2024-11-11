@@ -46,7 +46,7 @@ env:
   DEPLOYMENT_MANIFEST_PATH: |
     manifests/deployment.yaml
     manifests/service.yaml
-  DOCKER_FILE: contoso-air/images/Dockerfile
+  DOCKER_FILE: Dockerfile
   BUILD_CONTEXT_PATH: ./src/web
   NAMESPACE: default
 
