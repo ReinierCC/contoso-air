@@ -5,7 +5,7 @@ metadata:
   labels:
     app: my-app
     kubernetes.azure.com/generator: devhub
-  namespace: test
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: my-app
-          image: contoso-air:385dfd096e56bafeea611cd4171535978b74ba3c
+          image: contoso-air:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
