@@ -48,7 +48,7 @@ env:
     manifests/service.yaml
   DOCKER_FILE: Dockerfile
   BUILD_CONTEXT_PATH: ./src/web
-  NAMESPACE: test
+  NAMESPACE: default
 
 jobs:
   buildImage:
