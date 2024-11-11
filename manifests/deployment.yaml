@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: my-app
-          image: contoso-air:68601d0155998bfcd5d571b95c5a449343544fabx
+          image: reiacr9.azurecr.io/contoso-air:68601d0155998bfcd5d571b95c5a449343544fabx
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
