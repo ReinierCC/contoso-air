@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: PortalContosoAir
+  name: testflow
   labels:
-    app: PortalContosoAir
+    app: testflow
     kubernetes.azure.com/generator: devhub
-  namespace: namespace-workflow-1729107684714
+  namespace: namespace-workflow-1736798693789
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: PortalContosoAir
+      app: testflow
   template:
     metadata:
       labels:
-        app: PortalContosoAir
+        app: testflow
     spec:
       containers:
-        - name: PortalContosoAir
-          image: acrworkflow1729107684714.azurecr.io/image-workflow-1729107684714:latest
+        - name: testflow
+          image: reiClusterregistry.azurecr.io/image-workflow-1736798693789:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
