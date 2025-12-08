@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      # Optional: Configure Azure CosmosDB connection
+      # - COSMOS_DB_AUTH_KEY=your-cosmos-db-auth-key
+      # - COSMOS_DB_URL=your-cosmos-db-url
+      # - COSMOS_DB_DATABASE=contosoair
+    restart: unless-stopped
