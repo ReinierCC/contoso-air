@@ -49,3 +49,43 @@ npm start
 ```
 
 Browse to `http://localhost:3000` to see the app.
+
+## Running with Docker
+
+### Using Docker
+
+Build and run the application using Docker:
+
+```bash
+# Build the Docker image
+docker build -t contoso-air .
+
+# Run the container
+docker run -p 3000:3000 contoso-air
+
+# Run with Azure CosmosDB (optional)
+docker run -p 3000:3000 \
+  -e COSMOS_DB_AUTH_KEY=your-auth-key \
+  -e COSMOS_DB_URL=your-cosmos-db-url \
+  -e COSMOS_DB_DATABASE=contosoair \
+  contoso-air
+```
+
+### Using Docker Compose
+
+Run the application using Docker Compose:
+
+```bash
+# Start the application
+docker-compose up
+
+# Start in detached mode
+docker-compose up -d
+
+# Stop the application
+docker-compose down
+```
+
+To configure Azure CosmosDB, edit the `docker-compose.yml` file and uncomment the environment variables.
+
+Browse to `http://localhost:3000` to see the app.
